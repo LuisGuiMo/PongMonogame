@@ -8,6 +8,7 @@ namespace PongMonogame
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Texture2D ball2Texture;
         private Vector2 ballPosition;
         private float ballSpeed;
         private Texture2D ballTexture;
@@ -28,12 +29,12 @@ namespace PongMonogame
             //_spriteBatch.Draw(ballTexture, new Vector2(10, 10), Color.White);
             //_spriteBatch.Draw(ballTexture, ballPosition, Color.White);
             _spriteBatch.Draw(
-                ballTexture,
+                ball2Texture,
                 ballPosition,
                 null,
                 Color.White,
                 0f,
-                new Vector2(ballTexture.Width / 2, ballTexture.Height / 2),
+                new Vector2(ball2Texture.Width / 2, ball2Texture.Height / 2),
                 Vector2.One,
                 SpriteEffects.None,
                 0f
@@ -62,7 +63,8 @@ namespace PongMonogame
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            ballTexture = Content.Load<Texture2D>("ball");
+            //ballTexture = Content.Load<Texture2D>("ball");
+            ball2Texture = Content.Load<Texture2D>("ball2");
         }
 
         protected override void Update(GameTime gameTime)
@@ -93,6 +95,24 @@ namespace PongMonogame
             if (kstate.IsKeyDown(Keys.D))
             {
                 ballPosition.X += updatedBallSpeed;
+            }
+
+            if (ballPosition.X > _graphics.PreferredBackBufferWidth - ball2Texture.Width / 2)
+            {
+                ballPosition.X = _graphics.PreferredBackBufferWidth - ball2Texture.Width / 2;
+            }
+            else if (ballPosition.X < ball2Texture.Width / 2)
+            {
+                ballPosition.X = ball2Texture.Width / 2;
+            }
+
+            if (ballPosition.Y > _graphics.PreferredBackBufferHeight - ball2Texture.Height / 2)
+            {
+                ballPosition.Y = _graphics.PreferredBackBufferHeight - ball2Texture.Height / 2;
+            }
+            else if (ballPosition.Y < ball2Texture.Height / 2)
+            {
+                ballPosition.Y = ball2Texture.Height / 2;
             }
 
             base.Update(gameTime);
