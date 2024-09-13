@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -12,6 +13,9 @@ namespace PongMonogame
         private Vector2 ballPosition;
         private float ballSpeed;
         private Texture2D ballTexture;
+
+        // Audio objects
+        private SoundEffect soundEffect;
 
         public Game1()
         {
@@ -65,6 +69,7 @@ namespace PongMonogame
             // TODO: use this.Content to load your game content here
             //ballTexture = Content.Load<Texture2D>("ball");
             ball2Texture = Content.Load<Texture2D>("ball2");
+            soundEffect = Content.Load<SoundEffect>("GameMusic");
         }
 
         protected override void Update(GameTime gameTime)
