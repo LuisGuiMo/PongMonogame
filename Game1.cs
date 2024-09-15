@@ -8,6 +8,7 @@ namespace PongMonogame
 {
     public class Game1 : Game
     {
+        // Atributos
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Ball ball;
