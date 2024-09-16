@@ -59,6 +59,7 @@ namespace PongMonogame.Models
             {
                 Velocity.X *= -1;  // Cambiar dirección horizontal
             }
+            // Detectar colisión con los bordes
 
             if (Position.Y <= Texture.Height / 2 || Position.Y >= _graphics.PreferredBackBufferHeight - Texture.Height / 2)
             {
