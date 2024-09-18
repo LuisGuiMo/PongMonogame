@@ -20,7 +20,7 @@ namespace PongMonogame.Models
         {
             Texture = texture;
             _graphics = graphics;
-            Speed = 500f;
+            Speed = 1000f;
 
             // Posición inicial en el centro
             Position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
