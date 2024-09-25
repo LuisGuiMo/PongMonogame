@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PongMonogame.Models
-{
-    public class Ball
     {
+    public class Ball
+        {
         private GraphicsDeviceManager _graphics;
         private float Speed;
         private Texture2D Texture;
@@ -17,7 +17,7 @@ namespace PongMonogame.Models
 
         // Dirección y velocidad
         public Ball(Texture2D texture, GraphicsDeviceManager graphics)
-        {
+            {
             Texture = texture;
             _graphics = graphics;
             Speed = 1000f;
@@ -28,12 +28,12 @@ namespace PongMonogame.Models
             // Dirección inicial (puedes ajustarla)
             Velocity = new Vector2(1f, 1f);  // Se moverá diagonalmente al principio
             Velocity.Normalize();  // Asegura que la velocidad esté normalizada
-        }
-
+            }
+        //new
         public Vector2 Position { get; private set; }
 
         public void Draw(SpriteBatch spriteBatch)
-        {
+            {
             spriteBatch.Draw(
                 Texture,
                 Position,
@@ -45,10 +45,10 @@ namespace PongMonogame.Models
                 SpriteEffects.None,
                 0f
             );
-        }
+            }
 
         public void Update(GameTime gameTime)
-        {
+            {
             float updatedSpeed = Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // Actualizar posición
@@ -56,15 +56,15 @@ namespace PongMonogame.Models
 
             // Detectar colisión con los bordes
             if (Position.X <= Texture.Width / 2 || Position.X >= _graphics.PreferredBackBufferWidth - Texture.Width / 2)
-            {
+                {
                 Velocity.X *= -1;  // Cambiar dirección horizontal
-            }
+                }
             // Detectar colisión con los bordes
 
             if (Position.Y <= Texture.Height / 2 || Position.Y >= _graphics.PreferredBackBufferHeight - Texture.Height / 2)
-            {
+                {
                 Velocity.Y *= -1;  // Cambiar dirección vertical
+                }
             }
         }
     }
-}
