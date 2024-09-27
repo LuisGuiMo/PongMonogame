@@ -31,7 +31,7 @@ namespace PongMonogame.Models
             }
         //new
         public Vector2 Position { get; private set; }
-
+        //new
         public void Draw(SpriteBatch spriteBatch)
             {
             spriteBatch.Draw(
@@ -44,6 +44,7 @@ namespace PongMonogame.Models
                 Vector2.One,
                 SpriteEffects.None,
                 0f
+
             );
             }
 
