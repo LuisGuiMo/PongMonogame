@@ -14,6 +14,7 @@ namespace PongMonogame.Models
         private float Speed;
         private Texture2D Texture;
         private Vector2 Velocity;
+        private Vector2 Lore;
 
         // Dirección y velocidad
         public Ball(Texture2D texture, GraphicsDeviceManager graphics)
