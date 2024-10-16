@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace PongMonogame.Models
     {
+    // Clase que representa la bola del juego
     public class Ball
         {
         private GraphicsDeviceManager _graphics;
